@@ -31,12 +31,15 @@ let initLoginAPI = (app, userManager) => {
     secret: "james",
     resave: false,
     saveUninitialized: true,
+    cookie: {
+      httpOnly: false
+    }
   }));
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(passport.initialize());
   app.use(passport.session());
   app.post('/login', passport.authenticate('local'), (req, res) => {
-    res.redirect('/');
+    res.redirect('http://localhost:1235/');
   });
 }
 
