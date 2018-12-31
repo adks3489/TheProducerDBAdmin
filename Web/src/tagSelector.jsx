@@ -14,7 +14,6 @@ class TagSelector extends Component {
   }
 
   render() {
-    console.log(this.props)
     if (Array.isArray(this.props.value)) {
       var mode = "multiple";
     }

@@ -80,7 +80,6 @@ class ScriptEditor extends Component {
   render() {
     let { appState } = this.props;
     let { currentScript } = appState;
-    console.log(currentScript);
     if (typeof currentScript.Name === "string") {
       currentScript.Name = [currentScript.Name];
     }

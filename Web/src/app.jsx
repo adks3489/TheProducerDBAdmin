@@ -7,7 +7,7 @@ import Scripts from './scripts';
 import AppState from './store/appState';
 
 let appState = new AppState();
-//@inject('appState')
+
 @observer
 class App extends Component {
   constructor() {
