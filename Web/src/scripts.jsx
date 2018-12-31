@@ -37,7 +37,7 @@ class Scripts extends Component {
               )}
             />
           </div>
-          <div>
+          <div style={{ flex: 1, height: "100%", overflowY: "auto" }}>
             {appState.currentScriptKey && <ScriptEditor />}
           </div>
         </div>
