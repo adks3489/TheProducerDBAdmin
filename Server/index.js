@@ -4,7 +4,10 @@ const UserManager = require('./lib/userManager');
 const ScriptManager = require('./lib/scriptManager');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ['http://localhost:1235', 'https://s3-ap-northeast-1.amazonaws.com/jcweb.sytes.net'],
+  credentials: true
+}));
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', (req, res) => {

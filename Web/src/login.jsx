@@ -4,7 +4,6 @@ import { observable, action, computed, autorunAsync, autorun } from 'mobx';
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import MD5 from 'md5.js';
 
-@inject('appState')
 @observer
 class Login extends Component {
   constructor() {
@@ -25,8 +24,6 @@ class Login extends Component {
   }
 
   componentDidMount() {
-
-    this.props.form.setFieldsValue({username:"adks3489", password:"mogirls923"});
   }
 
   render() {

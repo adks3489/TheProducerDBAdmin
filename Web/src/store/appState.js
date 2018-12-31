@@ -46,6 +46,8 @@ class AppState {
       headers: {
         'content-type': 'application/json'
       },
+      credentials: 'include',
+      mode: 'cors',
       body: JSON.stringify(toJS(this.currentScript))
     }).then(resp => {
 

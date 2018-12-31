@@ -21,6 +21,10 @@ class ScriptManager {
     });
     app.use(`${path}/:id`, express.json());
     app.put(`${path}/:id`, (req, res) => {
+      if(!req.isAuthenticated()) {
+        res.redirect('http://localhost:1235/login');
+        return;
+      }
       this.update(req.params.id, req.body);
       res.send('OK');
     });
