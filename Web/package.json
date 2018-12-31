@@ -28,6 +28,7 @@
     "md5.js": "^1.3.5",
     "mobx": "^5.5.0",
     "mobx-react": "^5.2.8",
+    "prop": "^0.1.1",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-router-dom": "^4.3.1"
