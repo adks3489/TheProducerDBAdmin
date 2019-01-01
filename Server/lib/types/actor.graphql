@@ -1,0 +1,37 @@
+type Actor {
+  key: ID!
+  Name: String!
+  OrigName: String
+  Star: Int!
+  FilmTypes: [Int!]
+  FilmTags: [Int!]
+  Tags: [Int!]
+  Attrs: [Int!]
+  Nation: Int
+  Gender: Int
+  Faction: Int
+  Type: Int
+}
+
+input InputActor {
+  Name: String
+  OrigName: String
+  Star: Int
+  FilmTypes: [Int!]
+  FilmTags: [Int!]
+  Tags: [Int!]
+  Attrs: [Int!]
+  Nation: Int
+  Gender: Int
+  Faction: Int
+  Type: Int
+}
+
+type Query {
+  actors: [Actor!]!
+  actor(key: ID!): Actor
+}
+
+type Mutation {
+  updateActor(key: ID!, val: InputActor): Actor
+}

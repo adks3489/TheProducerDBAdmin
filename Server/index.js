@@ -2,6 +2,8 @@ const express = require('express');
 const cors = require('cors');
 const UserManager = require('./lib/userManager');
 const ScriptManager = require('./lib/scriptManager');
+const graphqlHTTP = require('express-graphql');
+const { schema, rootValue } = require('./lib/graphqlSchema');
 
 const app = express();
 app.use(cors({
@@ -20,6 +22,13 @@ let initLogin = require('./lib/login');
 initLogin(app, userManager);
 
 let scriptManager = new ScriptManager(app, '/script');
+
+app.use('/graphql', express.json());
+app.use('/graphql', graphqlHTTP({
+  schema,
+  rootValue,
+  graphiql: true,
+}));
 
 app.listen(80, () => {
   console.log('web server listening on port 80');
